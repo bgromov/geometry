@@ -161,7 +161,7 @@ public:
         else if(q.length2() > 1.0 + DBL_EPSILON || q.length2() < 1.0 - DBL_EPSILON)
         {
           q = q.normalize();
-          ROS_WARN("Reconfigure: quaternion is not normilized. Normalizing.");
+          ROS_WARN("Reconfigure: quaternion is not normalized. Normalizing.");
         }
 
         // Update orientation only
