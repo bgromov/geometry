@@ -158,7 +158,7 @@ public:
           ROS_ERROR("Reconfigure: quaternion length cannot be 0.0. Using previous value");
         }
         // Check normalization
-        else if(!q.normalized())
+        else if(q.length2() > 1.0 + DBL_EPSILON || q.length2() < 1.0 - DBL_EPSILON)
         {
           q = q.normalize();
           ROS_WARN("Reconfigure: quaternion is not normilized. Normalizing.");
